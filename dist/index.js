@@ -14200,12 +14200,11 @@
       }
       twistcliVersion = twistcliVersion.replace(/"/g, '');
   
+      await getTwistcli(twistcliVersion, consoleUrl, token);
+      let twistcliCmd = ['twistcli'];
       if (TRUE_VALUES.includes(tarball)) {
         twistcliCmd = twistcliCmd.concat(['sudo ']);
       }
-
-      await getTwistcli(twistcliVersion, consoleUrl, token);
-      let twistcliCmd = ['twistcli'];
       if (httpProxy) {
         twistcliCmd = twistcliCmd.concat([`--http-proxy ${httpProxy}`]);
       }
