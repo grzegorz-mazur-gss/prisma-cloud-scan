@@ -253,7 +253,6 @@ async function scan() {
     }
     twistcliCmd = twistcliCmd.concat([
       'images', 'scan',
-      '--tarball',
       `--address ${consoleUrl}`,
       `--user ${username}`, `--password ${password}`,
       `--output-file ${resultsFile}`,
