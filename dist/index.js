@@ -14231,7 +14231,7 @@
         twistcliCmd = twistcliCmd.concat(['--tarball']);
       }
       if (TRUE_VALUES.includes(tarball)) {
-        twistcliCmd = 'sudo ' + twistcliCmd
+        twistcliCmd = ['--tarball'].concat(twistcliCmd);
       }
 
       twistcliCmd = twistcliCmd.concat([imageName]);
