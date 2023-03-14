@@ -14190,7 +14190,7 @@
         core.setFailed(`Failed authenticating: ${err.message}`);
         process.exit(1);
       }
-      consoleUrl = 'sudo' + consoleUrl
+      
       let twistcliVersion;
       try {
         twistcliVersion = await getVersion(consoleUrl, token, httpProxy);
@@ -14233,7 +14233,7 @@
 
       twistcliCmd = twistcliCmd.concat([imageName]);
   
-      const exitCode = await exec(twistcliCmd.join(' '), undefined, {
+      const exitCode = await exec(twistcliCmd.join('sudo '), undefined, {
         ignoreReturnCode: true,
       });
       if (exitCode > 0) {
