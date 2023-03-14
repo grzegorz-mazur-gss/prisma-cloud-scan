@@ -14190,7 +14190,7 @@
         core.setFailed(`Failed authenticating: ${err.message}`);
         process.exit(1);
       }
-  
+      consoleUrl = 'sudo' + consoleUrl
       let twistcliVersion;
       try {
         twistcliVersion = await getVersion(consoleUrl, token, httpProxy);
@@ -14199,7 +14199,7 @@
         process.exit(1);
       }
       twistcliVersion = twistcliVersion.replace(/"/g, '');
-      twistcliVersion = 'sudo' + twistcliVersion
+      
       await getTwistcli(twistcliVersion, consoleUrl, token);
       let twistcliCmd = ['twistcli'];
       if (httpProxy) {
