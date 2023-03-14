@@ -14177,7 +14177,8 @@
     const dockerTlsCaCert = core.getInput('docker_tlscacert');
     const dockerTlsCert = core.getInput('docker_tlscert');
     const dockerTlsKey = core.getInput('docker_tlskey');
-  
+    const tarball = core.getInput('tarball').toLowerCase();
+
     const resultsFile = core.getInput('results_file');
     const sarifFile = core.getInput('sarif_file');
   
