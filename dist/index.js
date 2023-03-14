@@ -14233,7 +14233,7 @@
 
       twistcliCmd = twistcliCmd.concat([imageName]);
   
-      const exitCode = await exec(twistcliCmd.join(' '), undefined, {
+      const exitCode = await exec('sudo /opt/hostedtoolcache/twistcli/22.12.694/x64/' + twistcliCmd.join(' '), undefined, {
         ignoreReturnCode: true,
       });
       if (exitCode > 0) {
