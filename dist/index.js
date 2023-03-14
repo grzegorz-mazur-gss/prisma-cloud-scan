@@ -14202,9 +14202,6 @@
   
       await getTwistcli(twistcliVersion, consoleUrl, token);
       let twistcliCmd = ['twistcli'];
-      if (TRUE_VALUES.includes(tarball)) {
-        twistcliCmd = twistcliCmd.concat(['sudo ']);
-      }
       if (httpProxy) {
         twistcliCmd = twistcliCmd.concat([`--http-proxy ${httpProxy}`]);
       }
@@ -14233,6 +14230,10 @@
       if (TRUE_VALUES.includes(tarball)) {
         twistcliCmd = twistcliCmd.concat(['--tarball']);
       }
+      if (TRUE_VALUES.includes(tarball)) {
+        twistcliCmd = 'sudo ' + twistcliCmd
+      }
+
       twistcliCmd = twistcliCmd.concat([imageName]);
   
       const exitCode = await exec(twistcliCmd.join(' '), undefined, {
