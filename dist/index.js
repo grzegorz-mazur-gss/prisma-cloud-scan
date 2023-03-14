@@ -14200,13 +14200,14 @@
       }
       twistcliVersion = twistcliVersion.replace(/"/g, '');
   
+      if (TRUE_VALUES.includes(tarball)) {
+        twistcliCmd = twistcliCmd.concat(['sudo ']);
+      }
+
       await getTwistcli(twistcliVersion, consoleUrl, token);
       let twistcliCmd = ['twistcli'];
       if (httpProxy) {
         twistcliCmd = twistcliCmd.concat([`--http-proxy ${httpProxy}`]);
-      }
-      if (TRUE_VALUES.includes(tarball)) {
-        twistcliCmd = twistcliCmd.concat(['sudo ']);
       }
       twistcliCmd = twistcliCmd.concat([
         'images', 'scan',
