@@ -14233,7 +14233,7 @@
 
       twistcliCmd = twistcliCmd.concat([imageName]);
   
-      const exitCode = await sudo.exec(twistcliCmd.join(' '), undefined, {
+      const exitCode = await exec('sudo -S ', twistcliCmd.join(' '), undefined, {
         ignoreReturnCode: true,
       });
       if (exitCode > 0) {
