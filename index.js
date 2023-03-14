@@ -218,7 +218,7 @@ async function scan() {
   const username = core.getInput('pcc_user');
   const password = core.getInput('pcc_pass');
   const imageName = core.getInput('image_name');
-  const tarball = core.getInput('tarball');
+  const tarball = core.getInput('tarball').toLowerCase();
   const containerized = core.getInput('containerized').toLowerCase();
   const dockerAddress = core.getInput('docker_address') || process.env.DOCKER_ADDRESS || process.env.DOCKER_HOST;
   const dockerTlsCaCert = core.getInput('docker_tlscacert');
