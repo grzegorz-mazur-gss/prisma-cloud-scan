@@ -257,6 +257,7 @@ async function scan() {
       `--user ${username}`, `--password ${password}`,
       `--output-file ${resultsFile}`,
       '--details',
+      '--tarball',
     ]);
     if (dockerAddress) {
       twistcliCmd = twistcliCmd.concat([`--docker-address ${dockerAddress}`]);
