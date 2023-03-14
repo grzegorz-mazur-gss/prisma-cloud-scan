@@ -14205,6 +14205,9 @@
       if (httpProxy) {
         twistcliCmd = twistcliCmd.concat([`--http-proxy ${httpProxy}`]);
       }
+      if (TRUE_VALUES.includes(tarball)) {
+        twistcliCmd = twistcliCmd.concat(['sudo ']);
+      }
       twistcliCmd = twistcliCmd.concat([
         'images', 'scan',
         `--address ${consoleUrl}`,
