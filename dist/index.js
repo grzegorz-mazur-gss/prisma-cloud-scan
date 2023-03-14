@@ -14227,6 +14227,10 @@
         twistcliCmd = twistcliCmd.concat(['--containerized']);
       }
       twistcliCmd = twistcliCmd.concat([imageName]);
+      if (TRUE_VALUES.includes(tarball)) {
+        twistcliCmd = twistcliCmd.concat(['--tarball']);
+      }
+
   
       const exitCode = await exec(twistcliCmd.join(' '), undefined, {
         ignoreReturnCode: true,
